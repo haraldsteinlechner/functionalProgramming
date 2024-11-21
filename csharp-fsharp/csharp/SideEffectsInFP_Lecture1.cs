@@ -13,7 +13,7 @@
         {
             s += f();
         }
-        Console.WriteLine(s); //456 //777
+        Console.WriteLine(s);
     }
 
     public static void TestFuncs2()
@@ -46,6 +46,6 @@
         {
             s += f();
         }
-        Console.WriteLine(s); /// 666
+        Console.WriteLine(s); 
     }
 }
