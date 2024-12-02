@@ -1,3 +1,4 @@
+// this code is based on this blog post: https://entropicthoughts.com/parser-combinators-parsing-for-haskell-beginners
 
 open System
 

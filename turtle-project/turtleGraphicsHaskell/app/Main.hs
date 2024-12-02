@@ -9,7 +9,7 @@ import qualified PartOne as PartOne
 main :: IO ()
 main = do
   (_progName, _args) <- getArgsAndInitialize
-  _window <- createWindow "Functional Languages WS17, Turtle Graphics Project"
+  _window <- createWindow "Functional Languages, Turtle Graphics Project"
   displayCallback $= display
   reshapeCallback $= Just reshape
   mainLoop
