@@ -1,4 +1,4 @@
-This repository consolidates my functional programming materials since 2017. I used them for workshops, teachings, hackatons and more. Please note that, the materials of this repository are provided privately are not part officially part of my lectures and courses. If you are interested in consulting or professional courses tailored to your needs, please consoult me directly. Some of the material was provided  Also, i'm open for PR's for fixes or improvements.
+This repository consolidates my functional programming materials stacking up for many years. I used them for workshops, teachings, hackatons and more. Please note that, the materials of this repository are provided privately are not part officially part of my lectures and courses. If you are interested in consulting or professional courses tailored to your needs, please consoult me directly. Some of the material was provided  Also, i'm open for PR's for fixes or improvements.
 
 Exercise sheets:
 - [FP on familiar terrain](./exercise-sheets/1/exercise.pdf)
