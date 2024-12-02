@@ -4,7 +4,6 @@
     {
         static void Main(string[] args)
         {
-            (new List<int> { }).Se
             //Lecture1.CountLines.Test();
             //SideEffectsInFP.TestFuncs2();
             //SideEffectsLazyEvaluation.OrderOfEffects();
