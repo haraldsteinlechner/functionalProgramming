@@ -12,7 +12,7 @@ Projects, often used in student work:
 - [The (quite old) turtle project](./turtle-project/) shows parsing, language semantics and graphics including F# and Haskell implementations.
 - [The METAR parsing case study](./parsing/) explores parsing using parser combinators solving a real problem. The code and the idea is based on [Chris's blogpost](https://entropicthoughts.com/parser-combinators-parsing-for-haskell-beginners)
 
-Exercise sheets from my functional languages beginner course with support from attila:
+Exercise sheets from my functional languages beginner course (those exercise sheets are authored and partly co-authored by [attila](https://github.com/aszabo314)).
 - [first sheet](./beginners-course/1.pdf)
 - [second sheet](./beginners-course/2.pdf) and extra [solution](beginners-course/lists-solutions.fsx)
 
