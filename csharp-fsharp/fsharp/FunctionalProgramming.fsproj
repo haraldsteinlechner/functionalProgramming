@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="BasicsB.fsx" />
+    <None Include="BasicsA.fsx" />
+    <None Include="LectureBasics.fsx" />
+    <Compile Include="Basics.fs" />
     <Compile Include="CountLines_Lecture1.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>

@@ -4,3 +4,5 @@
 
 .fake
 /haskell/dist-newstyle/**
+/turtle-project/sheet-sources/exercise1.tcp
+/turtle-project/sheet-sources/exercise2.tcp

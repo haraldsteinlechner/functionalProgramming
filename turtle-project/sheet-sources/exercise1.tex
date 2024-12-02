@@ -1,0 +1,119 @@
+\documentclass[a4paper]{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[bottom]{footmisc}
+\usepackage{hyperref}
+\usepackage{syntax}
+
+
+\newcommand{\heart}{\ensuremath\heartsuit}
+
+%\usepackage[latin1]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{ngerman} 
+\title{Functional Languages}
+\author{Project - Turtle Graphics I}
+
+\date{05.11.2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Get this turtle started...}
+
+\begin{itemize}
+\item Clone the repository in github: \url{https://github.com/erdferkel-teaching/turtleWS20}
+\item There are stub projects for Haskell and F\#. This document refers to the F\# implementation. However, you can also
+do the Haskell version.
+\item This project is prepared for Visual Studio 2019 and should work with vscode. Please understand that we cannot provide ready to go solutions for all IDEs and tooling around! Ask during the lecture if you find any problems.
+The Haskell version is prepared via stack. The tooling should not be a problem, so please ask as early as possible in order not to get
+stuck in tooling problems.
+\item To build, follow the instructions in the readme files.
+\item For questions please consult the moodle forum.
+\item In the turtle project you can achieve 20 points, which is basis for the project part of grading.
+\end{itemize}
+
+The project structure is:
+\begin{itemize}
+\item \texttt{Program.fs} contains window and graphics setup code. Line 22 calls \texttt{PartOne.runTurtleProgram..}. This function takes
+a turtle program and returns a list of points. This is the entry point
+of your implementation.
+\item \texttt{PartOne.fs} contains stubs and empty functions which should be implemented. They are marked with 'TODO'.
+\end{itemize}
+
+\section{Modelling the domain (part of the codebase already)}
+
+Turtles may move forward by some distance, turn left and right. The following union type models this fact:
+\begin{verbatim}
+type Value = float // type alias for values in the turtle language
+type Cmd =
+    | Forward of Value // Move forward by Value
+    | Left    of Value // Turn left by Value degrees
+    | Right   of Value // Turn right by Value degrees
+\end{verbatim}
+A turtle program constitutes of a list of such commands. Additionally, let us define type aliases for our domain.
+\begin{verbatim}
+type Program = list<Cmd>
+
+type Vec2 = float * float
+type Angle = float
+\end{verbatim}
+In order to model the turtles state, we create a record as such:
+\begin{verbatim}
+type TurtleState = 
+{
+    direction : Angle     // direction in degrees
+    position : Vec2       // current position
+    trail    : list<Vec2> // points produced so far
+}
+\end{verbatim}
+
+\section{Implementing an interpreter (8 points)}
+
+The interpretation of a turtle command works as such: given a command and a current state, produce a new resulting state with the commands exectued.
+This can be formalized by a function of type: \texttt{TurtleState -> Cmd -> TurtleState}.
+Your task is to implement this interpreter for a list of commands, i.e. a turtle program:
+\begin{verbatim}
+let interpretTurtleProgram (s : TurtleState) (commands : Program) : TurtleState = your task...
+\end{verbatim}
+Hint: You could start with a function which interprets a single command. Then extend the implementation to a list of commands using fold.
+
+Make sure to test your implementation properly (there are already simple test functions as well as a more complex spiral program in the Examples module).
+
+\section{Parsing input commands from strings (8 points)}
+
+In the lecture we talked about functional parsers. In this project we would like to use an existing parser combinator library in order to
+accomplish a task. In this case we use \emph{FParsec}~\cite{FParsecD61:online} (in Haskell this would be parsec~\cite{parsecMo75:online}.
+
+In the lecture we already looked at FParsec code. In essence, we need to write 5 one liners in order to parse our input language of the form:
+\begin{grammar}
+<cmd> ::= `Forward(' <float> `)' 
+\alt `Left(' <float> `)'
+\alt `Right(' <float> `)'
+
+<cmd-list> ::= <cmd> `;' <cmd-list> | <cmd> `;'
+\end{grammar}
+
+The skeletons for the parsers are given in the repository. The concrete commands are straightforward: Parse the keyword, a parenthesis, a floating point number (\texttt{pfloat}) and a closing parenthesis.
+Next, \texttt{pCmd} is a choice between the previously defined primitive parsers.
+The tricky part comes with \texttt{pProgram}, which is a list of unknown length. The easiest way of parsing everything is by using the \texttt{manyTill} combinator, whereby we want
+to parse commands followed by semicolon until we end up applying parsecs \texttt{eof} parser (end of file, as discussed in lecture).
+
+
+
+\section{Files to submit}
+
+Submit your project till 19.12 as a zip file (without .git, bin or obj folders).
+
+\bigskip
+
+Happy coding.
+
+%\bibliographystyle{unsrt}
+\bibliographystyle{unsrt}
+\bibliography{references}
+%\bibliography{references}
+\end{document}

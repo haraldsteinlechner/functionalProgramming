@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +17,18 @@ namespace FunctionalProgrammingCSharp
         {
             Func<int, int> f = x => x * 2;
             Func<int, string> print = x => $"result was: {x.ToString()}";
+
+
+            Func<int, Func<int, int>> curriedFunction =
+                x => (y => x + y);
+
+            Func<int,int> partialApplication = curriedFunction(5);
+            var result2= partialApplication(5);
+
+            var result = curriedFunction(5)(5);
+
+
+
 
             Func<int, string> multToString = Compose(f, print);
             Console.WriteLine(multToString(2));
