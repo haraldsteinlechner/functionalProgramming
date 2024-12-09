@@ -1,4 +1,4 @@
-This repository consolidates my functional programming materials since 2017. I used them for workshops, teachings, hackatons and more. Please note that, most of the material is my personal work and i provide privately and not part of official lectures etc. If you are interested in consulting or professional courses tailored to your needs, please consoult me directly. Some of the material was provided  Also, i'm open for PR's for fixes or improvements.
+This repository consolidates my functional programming materials stacking up for many years. I used them for workshops, teachings, hackatons and more. Please note that, the materials of this repository are provided privately are not part officially part of my lectures and paid courses. If you are interested in consulting or professional courses tailored to your needs, please consoult me directly. Some of the material was provided was co-authored with collegues and friends which should be marked accordingly. 
 
 Exercise sheets:
 - [FP on familiar terrain](./exercise-sheets/1/exercise.pdf)
@@ -12,7 +12,7 @@ Projects, often used in student work:
 - [The (quite old) turtle project](./turtle-project/) shows parsing, language semantics and graphics including F# and Haskell implementations.
 - [The METAR parsing case study](./parsing/) explores parsing using parser combinators solving a real problem. The code and the idea is based on [Chris's blogpost](https://entropicthoughts.com/parser-combinators-parsing-for-haskell-beginners)
 
-Exercise sheets from my functional languages beginner course with support from attila:
+Exercise sheets from my functional languages beginner course (those exercise sheets are authored and partly co-authored by [attila](https://github.com/aszabo314)).
 - [first sheet](./beginners-course/1.pdf)
 - [second sheet](./beginners-course/2.pdf) and extra [solution](beginners-course/lists-solutions.fsx)
 
