@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Basics_B2.fsx" />
+    <None Include="Basics_A2.fsx" />
+    <None Include="Basics2.fsx" />
     <Compile Include="ParsingMetar.fs" />
     <Compile Include="BasicsB.fsx" />
     <None Include="BasicsA.fsx" />
