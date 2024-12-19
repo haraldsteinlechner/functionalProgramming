@@ -49,6 +49,10 @@ type MyOption<'a> =
     | MyNone
     | MySome of 'a
 
+
+let optionalString = MySome "some string"
+let optionalInt = MySome 2
+
 type Customer = 
     | PrivateCustomer of name : string 
     | CorporateCustomer of uuid : string * firma : string

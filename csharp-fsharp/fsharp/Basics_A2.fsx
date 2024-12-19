@@ -82,11 +82,20 @@ let parseInt (s : string) =
     | _ -> None
 
 
+let myMap f optionalValue =
+    match optionalValue with
+    | None -> None
+    | Some theValue -> 
+        let result = f theValue
+        Some result
+
+let addOne2 x = x + 1
+
 let parseStringAddOne (s : string) =
     s 
     |> parseInt 
-    |> Option.map (fun x -> x + 1) 
-    |> Option.map string
+    |> Option.map addOne2
+    |> Option.map (fun x -> $"the value is{x}")
 
 let mapOption f optionalValue =
     match optionalValue with
@@ -96,7 +105,7 @@ let mapOption f optionalValue =
 
 // in practise, for particular problems
 
-type DbResult<'a> = 
+type DbResult<'a> =  
     | Ok of 'a
     | NotAuthorized
     | InvalidOperation

@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="ListsAndHOF_B.fsx" />
+    <None Include="ListsAndHOF_A.fsx" />
     <Compile Include="Basics_B2.fsx" />
     <None Include="Basics_A2.fsx" />
     <None Include="Basics2.fsx" />
